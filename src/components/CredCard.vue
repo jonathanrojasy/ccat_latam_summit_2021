@@ -1,10 +1,10 @@
 <template>
-  <v-container fluid>
-    <v-row justify="center" class="pt-15 pb-10">
+  <v-container fluid fill-height class="py-6">
+    <v-row justify="center" align="center">
       <v-sheet
           rounded
           class="pa-6"
-          width="600"
+          max-width="600"
       >
         <v-sheet
             color="indigo darken-4"

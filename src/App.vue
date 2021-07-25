@@ -2,7 +2,7 @@
   <v-app>
     <Header/>
     <v-main>
-      <v-container fluid>
+      <v-container fluid class="pa-0">
         <CredCard/>
       </v-container>
     </v-main>
@@ -26,10 +26,6 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   background-color: darkblue;
 }
 </style>
