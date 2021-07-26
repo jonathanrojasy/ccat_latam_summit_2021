@@ -2,7 +2,7 @@
   <v-app>
     <Header/>
     <v-main>
-      <v-container fluid class="pa-0">
+      <v-container fluid>
         <CredCard/>
       </v-container>
     </v-main>
@@ -26,6 +26,6 @@ export default {
 
 <style>
 #app {
-  background-color: darkblue;
+  background-color: #20068D;
 }
 </style>

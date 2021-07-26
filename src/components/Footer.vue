@@ -9,19 +9,23 @@
         tile
     >
       <v-card-title
-          class="pink lighten-3 pa-0"
+          style="background-color: #fe718f"
+          class="pa-0"
       >
         <v-sheet
             height="100"
             width="100"
-            color="red darken-1"
+            color="#ff3233"
             class="fill-height container--fluid"
         >
           <v-col>
-            <v-row class="justify-center pt-2">
+            <v-row
+                class="justify-center"
+                :class="$vuetify.breakpoint.xs ? 'pt-4' : 'pt-2'"
+            >
               <v-img
                   :src="require('@/assets/CCAT-LogoBlanco.png')"
-                  max-width="90"
+                  :max-width="$vuetify.breakpoint.xs ? 80 : 90"
               ></v-img>
             </v-row>
           </v-col>
@@ -32,13 +36,13 @@
         <v-btn
             v-for="sponsor in sponsors"
             :key="sponsor.id"
-            class="px-6"
+            :class="$vuetify.breakpoint.xs ? 'px-2' : 'px-6'"
             :href="sponsor.link"
             plain
         >
           <v-img
               :src="sponsor.path()"
-              max-width="80"
+              :max-width="$vuetify.breakpoint.xs ? 50 : 90"
           ></v-img>
         </v-btn>
       </v-card-title>
