@@ -24,7 +24,7 @@
                     color="#fe718f"
                     class="subtitle-1 font-weight-bold white--text"
                     block
-                    @click="downloadWithAxios(require('@/assets/Fondo-credencial.png'),'Fondo-credencial.png')"
+                    @click="captureDiv()"
                 >DESCARGAR</v-btn>
               </v-row>
               <v-row justify="center" class="py-2">
@@ -41,24 +41,31 @@
           </div>
         </v-card-title>
       </v-card>
+      <img :src="output">
     </v-row>
   </v-container>
 </template>
 
 <script>
 import ShowImage from "@/components/ShowImage";
-import axios from 'axios'
+import axios from "axios"
+import html2canvas from "html2canvas"
 export default {
   name: 'CreateCredential',
   components:{
     ShowImage,
+  },
+  data() {
+    return {
+      output: null
+    }
   },
   computed:{
     nameSet(){
       return this.$route.params.name
     }
   },
-  methods:{
+  methods: {
     forceFileDownload(response, title) {
       console.log(title)
       const url = window.URL.createObjectURL(new Blob([response.data]))
@@ -78,6 +85,19 @@ export default {
             this.forceFileDownload(response, title)
           })
           .catch(() => console.log('error occured'))
+    },
+    captureDiv(){
+      html2canvas(document.querySelector("#capture")).then(canvas => {
+        const link = document.createElement("a");
+        link.setAttribute("download", "download.png");
+        link.setAttribute(
+            "href",
+            canvas
+                .toDataURL("image/png")
+                .replace("image/png", "image/octet-stream")
+        );
+        link.click();
+      });
     },
   }
 }

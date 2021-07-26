@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="capture">
     <v-img
         :src="require('@/assets/Fondo-credencial.png')"
     >
