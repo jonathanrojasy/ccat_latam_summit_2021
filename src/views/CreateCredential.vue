@@ -71,12 +71,10 @@ export default {
     captureDiv(){
       html2canvas(document.querySelector("#capture")).then(canvas => {
         const link = document.createElement("a");
-        link.setAttribute("download", "download.png");
+        link.setAttribute("download", "d-credencial.png");
         link.setAttribute(
             "href",
-            canvas
-                .toDataURL("image/png")
-                .replace("image/png", "image/octet-stream")
+            canvas.toDataURL("image/png").replace("image/png", "image/octet-stream")
         );
         link.click();
       });

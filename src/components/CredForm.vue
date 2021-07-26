@@ -48,7 +48,7 @@
                 <v-col cols="8">
                   <v-row align="center" justify="center">
                     <v-file-input
-                        accept="image/png, image/jpeg, image/bmp"
+                        accept="image/png, image/jpeg"
                         placeholder="Elija una imagen"
                         @change="Preview_image"
                         v-model="image"
