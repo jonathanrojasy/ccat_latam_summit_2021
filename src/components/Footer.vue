@@ -47,18 +47,22 @@
         </v-btn>
       </v-card-title>
       <v-card-text
-          class="text-center">
-        <v-btn
-            v-for="red in redes"
-            :key="red.id"
-            class="mx-4"
-            dark
-            icon
-        >
-          <v-icon size="24px">
-            {{ red.icon }}
-          </v-icon>
-        </v-btn>
+          class="text-center pt-4">
+        <v-row align="center">
+          <v-col>
+            <v-btn
+                v-for="red in redes"
+                :key="red.id"
+                class="mx-4"
+                dark
+                icon
+            >
+              <v-icon size="24px">
+                {{ red.icon }}
+              </v-icon>
+            </v-btn>
+          </v-col>
+        </v-row>
       </v-card-text>
     </v-card>
   </v-footer>

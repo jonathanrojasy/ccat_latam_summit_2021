@@ -12,7 +12,8 @@
         <v-col>
           <v-row justify="center">
             <span
-                class="text-h6 font-weight-bold"
+                class="font-weight-bold text-center "
+                :class="$vuetify.breakpoint.xs ? 'text-body-1' : 'text-h5'"
                 style="color: #1A237E"
             >Ingresa tu Nombre y Apellido</span>
           </v-row>
