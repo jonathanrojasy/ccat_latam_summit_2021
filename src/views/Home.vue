@@ -1,13 +1,13 @@
 <template>
-
+  <CredCard/>
 </template>
 
 <script>
+import CredCard from "@/components/CredCard";
 export default {
-  name: "Home"
+  name: 'Home',
+  components: {
+    CredCard
+  }
 }
 </script>
-
-<style scoped>
-
-</style>

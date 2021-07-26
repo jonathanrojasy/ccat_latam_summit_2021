@@ -3,7 +3,7 @@
     <Header/>
     <v-main>
       <v-container fluid>
-        <CredCard/>
+        <router-view></router-view>
       </v-container>
     </v-main>
     <Footer/>
@@ -13,13 +13,11 @@
 <script>
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import CredCard from "@/components/CredCard";
 export default {
   name: 'App',
   components: {
     Header,
     Footer,
-    CredCard
   }
 }
 </script>

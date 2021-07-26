@@ -1,7 +1,8 @@
 <template>
   <v-sheet
-      color="#ffA1B9"
+      color="#20068D"
       class="py-12"
+      id="form-credential"
   >
     <v-form
         ref="form"
@@ -99,12 +100,16 @@ export default {
 
   methods: {
     validate () {
-      this.$refs.form.validate()
+      if (this.$refs.form.validate()){
+        this.$router.push('/crear-credencial')
+      }
     },
   },
 }
 </script>
 
 <style scoped>
-
+#form-credential{
+  background-image: url("../assets/ondas-rosa-credencial.png");
+}
 </style>
