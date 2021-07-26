@@ -8,7 +8,7 @@
           max-width="600"
       >
         <v-card-title class="justify-center">
-          <ShowImage :name="nameSet" />
+          <ShowImage :name="nameSet" :url="imgSet"/>
         </v-card-title>
       </v-card>
       <v-card
@@ -48,7 +48,6 @@
 
 <script>
 import ShowImage from "@/components/ShowImage";
-import axios from "axios"
 import html2canvas from "html2canvas"
 export default {
   name: 'CreateCredential',
@@ -63,29 +62,12 @@ export default {
   computed:{
     nameSet(){
       return this.$route.params.name
+    },
+    imgSet(){
+      return this.$route.params.url
     }
   },
   methods: {
-    forceFileDownload(response, title) {
-      console.log(title)
-      const url = window.URL.createObjectURL(new Blob([response.data]))
-      const link = document.createElement('a')
-      link.href = url
-      link.setAttribute('download', title)
-      document.body.appendChild(link)
-      link.click()
-    },
-    downloadWithAxios(url, title) {
-      axios({
-        method: 'get',
-        url,
-        responseType: 'arraybuffer',
-      })
-          .then((response) => {
-            this.forceFileDownload(response, title)
-          })
-          .catch(() => console.log('error occured'))
-    },
     captureDiv(){
       html2canvas(document.querySelector("#capture")).then(canvas => {
         const link = document.createElement("a");

@@ -11,7 +11,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/crear-credencial/:name',
+    path: '/crear-credencial/:name/:url',
     name: 'CreateCredential',
     component: () => import('../views/CreateCredential.vue')
   }

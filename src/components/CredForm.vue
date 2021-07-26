@@ -41,21 +41,19 @@
                         class="profile"
                         size="100"
                     >
-                      <v-img :src="require('@/assets/foto_icon.png')"></v-img>
+                      <v-img :src="url==null? require('@/assets/foto_icon.png') : url"></v-img>
                     </v-avatar>
                   </v-row>
                 </v-col>
                 <v-col cols="8">
                   <v-row align="center" justify="center">
-                    <v-btn
-                        text
-                        color="#1A237E"
+                    <v-file-input
+                        accept="image/png, image/jpeg, image/bmp"
+                        placeholder="Elija una imagen"
+                        @change="Preview_image"
+                        v-model="image"
                     >
-                      <span
-                          class="font-weight-bold"
-                          :class="$vuetify.breakpoint.xs ? 'text-caption' : 'text-subtitle-1'"
-                      >Sube una foto</span>
-                    </v-btn>
+                    </v-file-input>
                   </v-row>
                 </v-col>
               </v-row>
@@ -90,6 +88,8 @@ export default {
   name: "CredForm",
   data: () => ({
     valid: true,
+    url: null,
+    image: null,
     name: '',
     nameRules: [
       v => !!v || 'Ingrese su nombre por favor.',
@@ -100,10 +100,18 @@ export default {
 
   methods: {
     validate () {
+      console.log(this.url)
       if (this.$refs.form.validate() && this.name.length < 20){
-        this.$router.push({name: 'CreateCredential', params: {name: this.name}})
+        this.$router.push({name: 'CreateCredential', params: {name: this.name, url: this.url}})
       }
     },
+    Preview_image() {
+      if(this.image){
+        this.url= URL.createObjectURL(this.image)
+      }else{
+        this.url = require('@/assets/foto_icon.png')
+      }
+    }
   },
 }
 </script>
