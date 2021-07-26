@@ -22,7 +22,7 @@
             <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
               <v-text-field
                   v-model="name"
-                  :counter="10"
+                  :counter="20"
                   :rules="nameRules"
                   solo
                   flat
@@ -49,7 +49,7 @@
                   <v-row align="center" justify="center">
                     <v-btn
                         text
-                        color="#FE718F"
+                        color="#1A237E"
                     >
                       <span
                           class="font-weight-bold"
@@ -62,7 +62,7 @@
             </v-col>
           </v-row>
 
-          <v-row justify="center">
+          <v-row justify="center" class="pt-6">
             <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
               <v-btn
                   :disabled="!valid"
@@ -94,14 +94,14 @@ export default {
     nameRules: [
       v => !!v || 'Ingrese su nombre por favor.',
       v => (v && (v.length >= 2)) || 'Su nombre debe contener por lo menos 2 caracteres.',
-      v => (v && (v.length <= 30)) || 'Su nombre debe contener a lo más 30 caracteres.',
+      v => (v && (v.length <= 20)) || 'Su nombre debe contener a lo más 30 caracteres.',
     ],
   }),
 
   methods: {
     validate () {
-      if (this.$refs.form.validate()){
-        this.$router.push('/crear-credencial')
+      if (this.$refs.form.validate() && this.name.length < 20){
+        this.$router.push({name: 'CreateCredential', params: {name: this.name}})
       }
     },
   },
