@@ -1,10 +1,10 @@
 <template>
-  <div id="capture" class="pa-2">
+  <div id="capcred" class="pa-2 padre">
     <v-img
         :src="require('@/assets/Fondo-credencial.png')"
     >
     </v-img>
-    <v-form class="centered">
+    <v-form class="center-input">
       <v-text-field
           :value="name"
           style="text-align: center"
@@ -16,7 +16,7 @@
       </v-text-field>
     </v-form>
     <v-avatar
-        class="profile centered-2"
+        class="profile center-image"
         size="170"
     >
       <v-img :src="url==null? require('@/assets/foto_icon.png') : url"></v-img>
@@ -35,13 +35,13 @@ export default {
 </script>
 
 <style scoped>
-.centered {
+.center-input {
   position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.centered-2 {
+.center-image {
   position: absolute;
   top: 67%;
   left: 50%;

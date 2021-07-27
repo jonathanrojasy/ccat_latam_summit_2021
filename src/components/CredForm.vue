@@ -87,6 +87,7 @@
 export default {
   name: "CredForm",
   data: () => ({
+    auxiliar: '',
     valid: true,
     url: null,
     image: null,
@@ -100,7 +101,9 @@ export default {
 
   methods: {
     validate () {
-      console.log(this.url)
+      if(this.url){
+        this.auxiliar = "blob:"+document.URL+this.url.split('/')[3]
+      }
       if (this.$refs.form.validate() && this.name.length < 20){
         this.$router.push({name: 'CreateCredential', params: {name: this.name, url: this.url}})
       }
