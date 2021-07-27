@@ -2,7 +2,7 @@
   <v-card
       color="transparent"
       flat
-      height="200px"
+      :height="$vuetify.breakpoint.xs ? '100px' : '200px'"
       tile
   >
     <v-toolbar
