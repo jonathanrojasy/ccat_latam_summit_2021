@@ -26,7 +26,7 @@ export default {
 #app {
   background-image: url("../src/assets/fondo_pag.png");
   background-attachment: fixed;
-  background-position: center;
+  background-position: top;
   background-size: cover;
 }
 </style>

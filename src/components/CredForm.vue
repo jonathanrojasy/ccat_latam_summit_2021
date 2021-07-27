@@ -18,9 +18,11 @@
                   :rules="nameRules"
                   placeholder="Ingresa tu Nombre y Apellido"
                   solo
+                  class="text-center"
                   flat
                   style="border-radius: 8px"
                   required
+                  single-line
               ></v-text-field>
             </v-col>
           </v-row>
@@ -77,6 +79,12 @@
   </v-sheet>
 </template>
 
+<style scoped>
+.centered-input >>> input {
+  text-align: center
+}
+</style>
+
 <script>
 export default {
   name: "CredForm",
@@ -109,7 +117,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-
-</style>
