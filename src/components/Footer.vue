@@ -12,9 +12,10 @@
           class="text-center pa-0"
       >
         <v-card
-            class="d-flex justify-space-around mb-6"
+            class="d-flex justify-space-around"
             flat
             tile
+            height="90"
             color="red"
         >
           <v-card
@@ -25,10 +26,16 @@
               tile
               color="transparent"
           >
-            <v-img
-                :src="item.path()"
-                :max-width="$vuetify.breakpoint.xs ? 80 : 80"
-            ></v-img>
+            <v-btn
+                :href="item.link"
+                target="_blank"
+                plain
+            >
+              <v-img
+                  :src="item.path()"
+                  :max-width="$vuetify.breakpoint.xs ? 50 : 60"
+              ></v-img>
+            </v-btn>
           </v-card>
         </v-card>
       </v-card-text>
