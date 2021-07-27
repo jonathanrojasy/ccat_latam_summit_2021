@@ -15,7 +15,7 @@
             class="d-flex justify-space-around"
             flat
             tile
-            height="120"
+            :height="$vuetify.breakpoint.xs ? 60 : 120"
             color="#FFFFFC"
         >
           <v-card
