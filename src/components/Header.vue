@@ -13,8 +13,8 @@
     >
       <v-img
           :src="require('@/assets/CCAT-LogoBlanco.png')"
-          :max-height="$vuetify.breakpoint.xs ? 90 : 90"
-          :max-width="$vuetify.breakpoint.xs ? 90 : 90"
+          :max-height="$vuetify.breakpoint.xs ? 50 : 90"
+          :max-width="$vuetify.breakpoint.xs ? 50 : 90"
           contain
       ></v-img>
 
@@ -22,15 +22,15 @@
 
       <span
           class="text-center text-h4 pt-10"
-          :class="$vuetify.breakpoint.xs ? 'text-subtitle-1' : 'text-h4'"
+          :class="$vuetify.breakpoint.xs ? 'text-subtitle-2' : 'text-h4'"
       >"PANEL DE ESPECIALISTAS CON MIRA AL BICENTENARIO"</span>
 
       <v-spacer></v-spacer>
 
       <v-img
           :src="require('@/assets/logo_uni_blanco.png')"
-          :max-height="$vuetify.breakpoint.xs ? 90 : 90"
-          :max-width="$vuetify.breakpoint.xs ? 170 : 170"
+          :max-height="$vuetify.breakpoint.xs ? 50 : 90"
+          :max-width="$vuetify.breakpoint.xs ? 100 : 170"
           contain
       ></v-img>
     </v-toolbar>
