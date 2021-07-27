@@ -14,7 +14,7 @@
             <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
               <v-text-field
                   v-model="name"
-                  :counter="20"
+                  :counter="28"
                   :rules="nameRules"
                   placeholder="Ingresa tu Nombre y Apellido"
                   solo
@@ -96,13 +96,13 @@ export default {
     nameRules: [
       v => !!v || 'Ingrese su nombre por favor.',
       v => (v && (v.length >= 2)) || 'Su nombre debe contener por lo menos 2 caracteres.',
-      v => (v && (v.length <= 20)) || 'Su nombre debe contener a lo más 30 caracteres.',
+      v => (v && (v.length <= 28)) || 'Su nombre debe contener a lo más 30 caracteres.',
     ],
   }),
 
   methods: {
     validate () {
-      if (this.$refs.form.validate() && this.name.length < 20){
+      if (this.$refs.form.validate() && this.name.length < 28){
         this.$router.push({name: 'CreateCredential', params: {name: this.name, url: this.url}})
       }
     },

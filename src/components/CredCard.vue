@@ -21,7 +21,7 @@
                 <v-row>
                   <v-sheet
                       color="transparent"
-                      :height="$vuetify.breakpoint.xs ? 142 : 124"
+                      :height="$vuetify.breakpoint.xs ? 100 : 124"
                   >
                   </v-sheet>
                 </v-row>
