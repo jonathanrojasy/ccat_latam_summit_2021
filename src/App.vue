@@ -24,6 +24,9 @@ export default {
 
 <style>
 #app {
-  background-color: #20068D;
+  background-image: url("../src/assets/fondo_pag.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 </style>

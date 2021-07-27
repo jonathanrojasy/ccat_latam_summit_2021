@@ -1,8 +1,7 @@
 <template>
   <v-sheet
-      color="#20068D"
       class="py-12"
-      id="form-credential"
+      color="transparent"
   >
     <v-form
         ref="form"
@@ -12,18 +11,12 @@
       <v-container fluid fill-height>
         <v-col>
           <v-row justify="center">
-            <span
-                class="font-weight-bold text-center "
-                :class="$vuetify.breakpoint.xs ? 'text-body-1' : 'text-h5'"
-                style="color: #1A237E"
-            >Ingresa tu Nombre y Apellido</span>
-          </v-row>
-          <v-row justify="center">
             <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
               <v-text-field
                   v-model="name"
                   :counter="20"
                   :rules="nameRules"
+                  placeholder="Ingresa tu Nombre y Apellido"
                   solo
                   flat
                   style="border-radius: 8px"
@@ -33,7 +26,7 @@
           </v-row>
 
           <v-row align="center" justify="center">
-            <v-col :cols="$vuetify.breakpoint.xs ? 10 : 8">
+            <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
               <v-row align="center" justify="center">
                 <v-col cols="4">
                   <v-row align="center" justify="center">
@@ -41,7 +34,7 @@
                         class="profile"
                         size="100"
                     >
-                      <v-img :src="url==null? require('@/assets/foto_icon.png') : url"></v-img>
+                      <v-img :src="url==null? require('@/assets/icono_foto_credencial.png') : url"></v-img>
                     </v-avatar>
                   </v-row>
                 </v-col>
@@ -52,6 +45,7 @@
                         placeholder="Elija una imagen"
                         @change="Preview_image"
                         v-model="image"
+                        dark
                     >
                     </v-file-input>
                   </v-row>
@@ -64,16 +58,16 @@
             <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
               <v-btn
                   :disabled="!valid"
-                  color="pink lighten-2"
+                  color="red"
                   @click="validate"
                   depressed
                   x-large
                   block
               >
-              <span
-                  class="white--text font-weight-bold"
-                  :class="$vuetify.breakpoint.xs ? 'text-caption' : 'text-h6'"
-              >Crear credencial</span>
+                <span
+                    class="white--text font-weight-bold"
+                    :class="$vuetify.breakpoint.xs ? 'text-caption' : 'text-h6'"
+                >Crear credencial</span>
               </v-btn>
             </v-col>
           </v-row>
@@ -87,7 +81,6 @@
 export default {
   name: "CredForm",
   data: () => ({
-    auxiliar: '',
     valid: true,
     url: null,
     image: null,
@@ -101,18 +94,16 @@ export default {
 
   methods: {
     validate () {
-      if(this.url){
-        this.auxiliar = "blob:"+document.URL+this.url.split('/')[3]
-      }
       if (this.$refs.form.validate() && this.name.length < 20){
         this.$router.push({name: 'CreateCredential', params: {name: this.name, url: this.url}})
       }
     },
     Preview_image() {
       if(this.image){
+
         this.url= URL.createObjectURL(this.image)
       }else{
-        this.url = require('@/assets/foto_icon.png')
+        this.url = URL.createObjectURL(require('@/assets/icono_foto_credencial.png'))
       }
     }
   },
@@ -120,7 +111,5 @@ export default {
 </script>
 
 <style scoped>
-#form-credential{
-  background-image: url("../assets/ondas-rosa-credencial.png");
-}
+
 </style>

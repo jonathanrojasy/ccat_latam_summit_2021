@@ -1,7 +1,9 @@
 <template>
   <div id="capcred" class="pa-2 padre">
     <v-img
-        :src="require('@/assets/Fondo-credencial.png')"
+        max-width="350"
+        max-height="650"
+        :src="require('@/assets/credencial_final.png')"
     >
     </v-img>
     <v-form class="center-input">
@@ -17,9 +19,9 @@
     </v-form>
     <v-avatar
         class="profile center-image"
-        size="170"
+        size="125"
     >
-      <v-img :src="url==null? require('@/assets/foto_icon.png') : url"></v-img>
+      <v-img :src="url"></v-img>
     </v-avatar>
   </div>
 </template>
@@ -37,13 +39,13 @@ export default {
 <style scoped>
 .center-input {
   position: absolute;
-  top: 45%;
+  top: 39%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 .center-image {
   position: absolute;
-  top: 67%;
+  top: 56%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
