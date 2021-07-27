@@ -56,7 +56,7 @@
             </v-col>
           </v-row>
 
-          <v-row justify="center" class="pt-6">
+          <v-row justify="center" class="pt-10">
             <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
               <v-btn
                   :disabled="!valid"
