@@ -52,6 +52,7 @@
                 v-for="red in redes"
                 :key="red.id"
                 class="mx-4"
+                :href="red.link"
                 dark
                 icon
                 target="_blank"
