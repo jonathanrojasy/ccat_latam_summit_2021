@@ -1,5 +1,5 @@
 <template>
-  <div id="credlinkedin" class="pa-0 padre">
+  <div id="credlinkedin" class="pa-0">
     <v-img
         :max-width="$vuetify.breakpoint.xs ? 350 : 600"
         :max-height="$vuetify.breakpoint.xs ? 200 : 350"
@@ -61,7 +61,7 @@ export default {
 }
 .center-image {
   position: absolute;
-  top: 42%;
+  top: 41.5%;
   left: 73.4%;
   transform: translate(-50%, -50%);
 }

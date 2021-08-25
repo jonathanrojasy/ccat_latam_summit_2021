@@ -1,5 +1,5 @@
 <template>
-  <div id="credhistorias" class="pa-0 padre">
+  <div id="credhistorias" class="pa-0">
     <v-img
         max-width="350"
         max-height="650"
