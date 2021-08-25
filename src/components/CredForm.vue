@@ -30,8 +30,8 @@
                   <v-col>
                     <v-row align="center" justify="center">
                       <v-avatar
-                          class="profile"
-                          size="107"
+                          class="profile center-avatar"
+                          size="106"
                       >
                         <v-img :src="url"></v-img>
                       </v-avatar>
@@ -88,6 +88,11 @@
 <style scoped>
 .centered-input >>> input {
   text-align: center
+}
+.center-avatar {
+  position: static;
+  top: 66%;
+  left: 50%;
 }
 </style>
 

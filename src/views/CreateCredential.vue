@@ -7,7 +7,7 @@
           flat
           max-width="600"
       >
-        <v-card-title class="justify-center">
+        <v-card-title class="justify-center pa-0">
           <span class="white--text text-h6">¡Tu credencial para tus historias!</span>
           <ShowImage :name="nameSet" :url="imgSet"/>
         </v-card-title>
@@ -52,8 +52,8 @@
           flat
           max-width="600"
       >
-        <v-card-title class="justify-center">
-          <span class="white--text text-h6">¡Tu credencial para compartir en LinkedIn!</span>
+        <v-card-title class="justify-center pa-0">
+          <span class="white--text text-h6 text-center text-break">¡Tu credencial para compartir en LinkedIn!</span>
           <ShowImage_LinkedIn :name="nameSet" :url="imgSet"/>
         </v-card-title>
       </v-card>
