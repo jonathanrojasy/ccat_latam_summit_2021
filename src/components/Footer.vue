@@ -75,9 +75,9 @@ export default {
     alto: 150,
     ancho: 200,
     sponsors: [
-      {id: "s1", name: 'CODE', path: () => {return require('@/assets/code.png');}, link: 'http://codewebpage.herokuapp.com'},
-      {id: "s2", name: 'CCAT', path: () => {return require('@/assets/logo_ccat_azul.png');}, link: 'https://www.facebook.com/ccat.pe'},
-      {id: "s3", name: 'Revista Competitividad', path: () => {return require('@/assets/rv.png');}, link: 'https://revistacompetitividad.com'},
+      {id: "s1", name: 'CODE', path: () => {return require('@/assets/sponsors/code.png');}, link: 'http://codewebpage.herokuapp.com'},
+      {id: "s2", name: 'CCAT', path: () => {return require('@/assets/sponsors/logo_ccat_azul.png');}, link: 'https://www.facebook.com/ccat.pe'},
+      {id: "s3", name: 'Revista Competitividad', path: () => {return require('@/assets/sponsors/rv.png');}, link: 'https://revistacompetitividad.com'},
     ],
     redes: [
       {id: "r1", icon: 'mdi-facebook', link: 'https://www.facebook.com/ccat.pe'},
