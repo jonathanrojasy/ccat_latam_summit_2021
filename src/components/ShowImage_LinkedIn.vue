@@ -20,7 +20,7 @@
     </v-form>
     <v-avatar
         class="profile center-image"
-        size="125"
+        size="152"
     >
       <v-img :src="url"></v-img>
     </v-avatar>
@@ -50,8 +50,8 @@ export default {
 }
 .center-image {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 42%;
+  left: 73.4%;
   transform: translate(-50%, -50%);
 }
 </style>

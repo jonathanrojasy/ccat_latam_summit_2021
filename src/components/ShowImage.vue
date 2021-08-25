@@ -49,7 +49,7 @@ export default {
 }
 .center-image {
   position: absolute;
-  top: 50%;
+  top: 52.2%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
