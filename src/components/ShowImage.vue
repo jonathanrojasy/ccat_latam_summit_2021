@@ -43,6 +43,8 @@ export default {
   top: 66%;
   left: 50%;
   transform: translate(-50%, -50%);
+  height: 50px;
+  width: 220px;
 }
 .center-input >>> input {
   text-align: center;
