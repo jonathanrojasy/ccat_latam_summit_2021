@@ -9,21 +9,30 @@
         lazy-validation
     >
       <v-container fluid fill-height>
-        <v-col>
-          <v-row align="center" justify="center">
+        <v-col cols="1"></v-col>
+        <v-col cols="10">
+          <v-row align="center" justify="center" no-gutters>
             <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
               <v-row align="center" justify="center">
-                <v-col cols="4">
+                <v-col>
                   <v-row align="center" justify="center">
                     <v-avatar
                         class="profile"
                         size="100"
+                        @click="clickAvatar"
                     >
                       <v-img :src="url"></v-img>
                     </v-avatar>
                   </v-row>
                 </v-col>
-                <v-col cols="8">
+              </v-row>
+            </v-col>
+          </v-row>
+
+          <v-row align="center" justify="center" no-gutters>
+            <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
+              <v-row align="center" justify="center">
+                <v-col>
                   <v-row align="center" justify="center">
                     <v-file-input
                         accept="image/png, image/jpeg"
@@ -31,7 +40,10 @@
                         @change="Preview_image"
                         v-model="image"
                         dark
+                        hide-details
+                        hide-input
                     >
+
                     </v-file-input>
                   </v-row>
                 </v-col>
@@ -39,7 +51,7 @@
             </v-col>
           </v-row>
 
-          <v-row justify="center">
+          <v-row justify="center" class="pt-1">
             <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
               <v-text-field
                   v-model="name"
@@ -48,32 +60,36 @@
                   id="input_nombre"
                   placeholder="Ingresa tu Nombre y Apellido"
                   solo
-                  class="text-center"
+                  class="centered-input font-weight-bold text-caption"
                   flat
-                  style="border-radius: 8px"
+                  rounded
+                  dense
                   required
                   single-line
+                  hide-details
               ></v-text-field>
             </v-col>
           </v-row>
 
-          <v-row justify="center" class="pt-10">
+          <v-row justify="center" class="pt-4" no-gutters>
             <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
               <v-btn
                   :disabled="!valid"
                   color="teal darken-4"
                   @click="validate"
                   depressed
-                  x-large
+                  rounded
+                  block
               >
                 <span
-                    class="white--text font-weight-bold"
-                    :class="$vuetify.breakpoint.xs ? 'text-caption' : 'text-h6'"
+                    class="white--text "
+                    :class="$vuetify.breakpoint.xs ? 'text-button' : 'text-subtitle'"
                 >Generar mi credencial</span>
               </v-btn>
             </v-col>
           </v-row>
         </v-col>
+        <v-col cols="1"></v-col>
       </v-container>
     </v-form>
   </v-sheet>
@@ -82,6 +98,9 @@
 <style scoped>
 #input_nombre {
   text-align: center;
+}
+.centered-input >>> input {
+  text-align: center
 }
 </style>
 
@@ -110,6 +129,9 @@ export default {
       if(this.image){
         this.url= URL.createObjectURL(this.image)
       }
+    },
+    clickAvatar(){
+      alert("Clic en avatar")
     }
   },
 }

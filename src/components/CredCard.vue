@@ -3,7 +3,7 @@
     <v-row justify="center" align="center">
       <v-col
           :cols="$vuetify.breakpoint.xs ? 12 : 10"
-          :class="$vuetify.breakpoint.xs ? 'py-10' : 'py-16'"
+          :class="$vuetify.breakpoint.xs ? 'pb-10' : 'pb-16'"
       >
         <v-row align="center" justify="center">
           <v-card
@@ -21,7 +21,7 @@
                 <v-row>
                   <v-sheet
                       color="transparent"
-                      :height="$vuetify.breakpoint.xs ? 100 : 124"
+                      :height="$vuetify.breakpoint.xs ? 190 : 158"
                   >
                   </v-sheet>
                 </v-row>
@@ -53,5 +53,6 @@ export default {
 .cred-form{
   background-image: url("../assets/credencial_base.png");
   background-size: cover;
+  background-position: center;
 }
 </style>
