@@ -9,56 +9,46 @@
         lazy-validation
     >
       <v-container fluid fill-height>
-        <v-col cols="1"></v-col>
-        <v-col cols="10">
+        <v-col :cols="$vuetify.breakpoint.xs ? 0 : 1"></v-col>
+        <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
           <v-row align="center" justify="center" no-gutters>
-            <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
-              <v-row align="center" justify="center">
-                <v-col>
-                  <v-row align="center" justify="center">
-                    <v-avatar
-                        class="profile"
-                        size="100"
-                        @click="clickAvatar"
-                    >
-                      <v-img :src="url"></v-img>
-                    </v-avatar>
-                  </v-row>
-                </v-col>
-              </v-row>
-            </v-col>
+            <v-container fluid fill-height>
+              <v-col :cols="$vuetify.breakpoint.xs ? 1 : 1">
+                <v-file-input
+                    accept="image/png, image/jpeg"
+                    placeholder="Sube tu foto"
+                    @change="Preview_image"
+                    v-model="image"
+                    dark
+                    hide-details
+                    hide-input
+                >
+                </v-file-input>
+              </v-col>
+              <v-col :cols="$vuetify.breakpoint.xs ? 10 : 10">
+                <v-row align="center" justify="center">
+                  <v-col>
+                    <v-row align="center" justify="center">
+                      <v-avatar
+                          class="profile"
+                          size="107"
+                      >
+                        <v-img :src="url"></v-img>
+                      </v-avatar>
+                    </v-row>
+                  </v-col>
+                </v-row>
+              </v-col>
+            </v-container>
           </v-row>
 
-          <v-row align="center" justify="center" no-gutters>
-            <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
-              <v-row align="center" justify="center">
-                <v-col>
-                  <v-row align="center" justify="center">
-                    <v-file-input
-                        accept="image/png, image/jpeg"
-                        placeholder="Sube tu foto"
-                        @change="Preview_image"
-                        v-model="image"
-                        dark
-                        hide-details
-                        hide-input
-                    >
-
-                    </v-file-input>
-                  </v-row>
-                </v-col>
-              </v-row>
-            </v-col>
-          </v-row>
-
-          <v-row justify="center" class="pt-1">
-            <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
+          <v-row align="center" justify="center" class="pt-4" no-gutters>
+            <v-col :cols="$vuetify.breakpoint.xs ? 8 : 10">
               <v-text-field
                   v-model="name"
                   :counter="28"
                   :rules="nameRules"
-                  id="input_nombre"
-                  placeholder="Ingresa tu Nombre y Apellido"
+                  placeholder="Nombre y Apellido"
                   solo
                   class="centered-input font-weight-bold text-caption"
                   flat
@@ -71,8 +61,8 @@
             </v-col>
           </v-row>
 
-          <v-row justify="center" class="pt-4" no-gutters>
-            <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
+          <v-row align="center" justify="center" class="pt-4" no-gutters>
+            <v-col :cols="$vuetify.breakpoint.xs ? 8 : 10">
               <v-btn
                   :disabled="!valid"
                   color="teal darken-4"
@@ -82,23 +72,20 @@
                   block
               >
                 <span
-                    class="white--text "
-                    :class="$vuetify.breakpoint.xs ? 'text-button' : 'text-subtitle'"
+                    class="white--text"
+                    :class="$vuetify.breakpoint.xs ? 'text-caption font-weight-light' : 'text-subtitle-1 font-weight-bold'"
                 >Generar mi credencial</span>
               </v-btn>
             </v-col>
           </v-row>
         </v-col>
-        <v-col cols="1"></v-col>
+        <v-col :cols="$vuetify.breakpoint.xs ? 0 : 1"></v-col>
       </v-container>
     </v-form>
   </v-sheet>
 </template>
 
 <style scoped>
-#input_nombre {
-  text-align: center;
-}
 .centered-input >>> input {
   text-align: center
 }
@@ -130,9 +117,6 @@ export default {
         this.url= URL.createObjectURL(this.image)
       }
     },
-    clickAvatar(){
-      alert("Clic en avatar")
-    }
   },
 }
 </script>

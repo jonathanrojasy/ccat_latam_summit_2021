@@ -2,7 +2,7 @@
   <v-container fluid fill-height class="px-0">
     <v-row justify="center" align="center">
       <v-col
-          :cols="$vuetify.breakpoint.xs ? 12 : 10"
+          :cols="$vuetify.breakpoint.xs ? 12 : 11"
           :class="$vuetify.breakpoint.xs ? 'pb-10' : 'pb-16'"
       >
         <v-row align="center" justify="center">
@@ -21,7 +21,7 @@
                 <v-row>
                   <v-sheet
                       color="transparent"
-                      :height="$vuetify.breakpoint.xs ? 190 : 158"
+                      :height="$vuetify.breakpoint.xs ? 115 : 138"
                   >
                   </v-sheet>
                 </v-row>
