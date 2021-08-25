@@ -61,11 +61,10 @@
             <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
               <v-btn
                   :disabled="!valid"
-                  color="red"
+                  color="teal darken-4"
                   @click="validate"
                   depressed
                   x-large
-                  block
               >
                 <span
                     class="white--text font-weight-bold"
