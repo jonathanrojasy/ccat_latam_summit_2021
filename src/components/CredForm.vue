@@ -10,23 +10,6 @@
     >
       <v-container fluid fill-height>
         <v-col>
-          <v-row justify="center">
-            <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
-              <v-text-field
-                  v-model="name"
-                  :counter="28"
-                  :rules="nameRules"
-                  placeholder="Ingresa tu Nombre y Apellido"
-                  solo
-                  class="text-center"
-                  flat
-                  style="border-radius: 8px"
-                  required
-                  single-line
-              ></v-text-field>
-            </v-col>
-          </v-row>
-
           <v-row align="center" justify="center">
             <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
               <v-row align="center" justify="center">
@@ -36,7 +19,7 @@
                         class="profile"
                         size="100"
                     >
-                      <v-img :src="url==null? require('@/assets/icono_foto_credencial.png') : url"></v-img>
+                      <v-img :src="url"></v-img>
                     </v-avatar>
                   </v-row>
                 </v-col>
@@ -44,7 +27,7 @@
                   <v-row align="center" justify="center">
                     <v-file-input
                         accept="image/png, image/jpeg"
-                        placeholder="Elija una imagen"
+                        placeholder="Sube tu foto"
                         @change="Preview_image"
                         v-model="image"
                         dark
@@ -53,6 +36,24 @@
                   </v-row>
                 </v-col>
               </v-row>
+            </v-col>
+          </v-row>
+
+          <v-row justify="center">
+            <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
+              <v-text-field
+                  v-model="name"
+                  :counter="28"
+                  :rules="nameRules"
+                  id="input_nombre"
+                  placeholder="Ingresa tu Nombre y Apellido"
+                  solo
+                  class="text-center"
+                  flat
+                  style="border-radius: 8px"
+                  required
+                  single-line
+              ></v-text-field>
             </v-col>
           </v-row>
 
@@ -69,7 +70,7 @@
                 <span
                     class="white--text font-weight-bold"
                     :class="$vuetify.breakpoint.xs ? 'text-caption' : 'text-h6'"
-                >Crear credencial</span>
+                >Generar mi credencial</span>
               </v-btn>
             </v-col>
           </v-row>
@@ -80,8 +81,8 @@
 </template>
 
 <style scoped>
-.centered-input >>> input {
-  text-align: center
+#input_nombre {
+  text-align: center;
 }
 </style>
 
@@ -108,10 +109,7 @@ export default {
     },
     Preview_image() {
       if(this.image){
-
         this.url= URL.createObjectURL(this.image)
-      }else{
-        this.url = URL.createObjectURL(require('@/assets/icono_foto_credencial.png'))
       }
     }
   },

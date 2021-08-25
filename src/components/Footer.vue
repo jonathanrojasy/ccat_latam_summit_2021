@@ -75,11 +75,9 @@ export default {
     alto: 150,
     ancho: 200,
     sponsors: [
-      {id: "s1", name: 'UNI', path: () => {return require('@/assets/logo_uni_transparente.png');}, link: 'https://www.uni.edu.pe/'},
-      {id: "s2", name: 'CODE', path: () => {return require('@/assets/code.png');}, link: 'http://codewebpage.herokuapp.com'},
-      {id: "s3", name: 'CCAT', path: () => {return require('@/assets/logo_ccat_azul.png');}, link: 'https://www.facebook.com/ccat.pe'},
-      {id: "s4", name: 'Revista Competitividad', path: () => {return require('@/assets/rv.png');}, link: 'https://revistacompetitividad.com'},
-      {id: "s5", name: 'Cultura y Desarrollo Humano', path: () => {return require('@/assets/cdh.png');}, link: 'https://www.facebook.com/DireccionDeCulturaCCAT'},
+      {id: "s1", name: 'CODE', path: () => {return require('@/assets/code.png');}, link: 'http://codewebpage.herokuapp.com'},
+      {id: "s2", name: 'CCAT', path: () => {return require('@/assets/logo_ccat_azul.png');}, link: 'https://www.facebook.com/ccat.pe'},
+      {id: "s3", name: 'Revista Competitividad', path: () => {return require('@/assets/rv.png');}, link: 'https://revistacompetitividad.com'},
     ],
     redes: [
       {id: "r1", icon: 'mdi-facebook', link: 'https://www.facebook.com/ccat.pe'},
@@ -90,9 +88,3 @@ export default {
   }),
 }
 </script>
-
-<style scoped>
-.btn-sponsors:focus {
-  opacity: 0.25 !important;
-}
-</style>
