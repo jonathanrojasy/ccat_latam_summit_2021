@@ -1,4 +1,4 @@
-# ccat_credencial
+# ccat_latam_summit_2021
 
 ## Project setup
 ```
