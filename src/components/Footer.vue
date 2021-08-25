@@ -24,7 +24,7 @@
               class="align-self-center"
               flat
               tile
-              width="110"
+              width="250"
               color="transparent"
           >
             <v-btn
@@ -36,7 +36,7 @@
               <v-img
                   class="pa-0"
                   :src="item.path()"
-                  :width="$vuetify.breakpoint.xs ? 30 : 90"
+                  :max-width="$vuetify.breakpoint.xs ? (item.width/2) : item.width"
               ></v-img>
             </v-btn>
           </v-card>
@@ -75,9 +75,15 @@ export default {
     alto: 150,
     ancho: 200,
     sponsors: [
-      {id: "s1", name: 'CODE', path: () => {return require('@/assets/sponsors/code.png');}, link: 'http://codewebpage.herokuapp.com'},
-      {id: "s2", name: 'CCAT', path: () => {return require('@/assets/sponsors/logo_ccat_azul.png');}, link: 'https://www.facebook.com/ccat.pe'},
-      {id: "s3", name: 'Revista Competitividad', path: () => {return require('@/assets/sponsors/rv.png');}, link: 'https://revistacompetitividad.com'},
+      {id: "s1", name: 'CODE', width: 200,
+        path: () => {return require('@/assets/sponsors/code.png');},
+        link: 'http://codewebpage.herokuapp.com'},
+      {id: "s2", name: 'CCAT', width: 110,
+        path: () => {return require('@/assets/sponsors/logo_ccat_azul.png');},
+        link: 'https://www.facebook.com/ccat.pe'},
+      {id: "s3", name: 'Revista Competitividad', width: 200,
+        path: () => {return require('@/assets/sponsors/rv.png');},
+        link: 'https://revistacompetitividad.com'},
     ],
     redes: [
       {id: "r1", icon: 'mdi-facebook', link: 'https://www.facebook.com/ccat.pe'},
