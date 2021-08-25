@@ -1,9 +1,9 @@
 <template>
-  <div id="credhistorias" class="pa-2 padre">
+  <div id="credlinkedin" class="pa-2 padre">
     <v-img
-        max-width="350"
-        max-height="650"
-        :src="require('@/assets/credenciales/historias.png')"
+        max-width="600"
+        max-height="350"
+        :src="require('@/assets/credenciales/linkedin.png')"
     >
     </v-img>
     <v-form class="center-input">
@@ -41,8 +41,9 @@ export default {
 .center-input {
   position: absolute;
   top: 66%;
-  left: 50%;
+  left: 74%;
   transform: translate(-50%, -50%);
+  width: 240px;
 }
 .center-input >>> input {
   text-align: center;
