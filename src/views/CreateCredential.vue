@@ -42,35 +42,18 @@
           </div>
         </v-card-title>
       </v-card>
-      <img :src="output">
     </v-row>
   </v-container>
 </template>
 
-<style scoped>
-.total{
-  opacity: 0;
-  position: absolute;
-}
-.contenedor{
-  position: sticky;
-}
-</style>
 
 <script>
 import ShowImage from "@/components/ShowImage";
-import ShowImage_LinkedIn from "../components/ShowImage_LinkedIn";
 import html2canvas from 'html2canvas'
 export default {
   name: 'CreateCredential',
   components:{
     ShowImage,
-    ShowImage_LinkedIn,
-  },
-  data() {
-    return {
-      output: null
-    }
   },
   computed:{
     nameSet(){
