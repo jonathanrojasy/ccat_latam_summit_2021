@@ -6,21 +6,12 @@
         :src="require('@/assets/credenciales/linkedin.png')"
     >
     </v-img>
-    <v-form
-        class="center-input"
+    <span
+        class="center-input font-weight-bold"
         :class="$vuetify.breakpoint.xs ? 'center-input-2' : 'center-input'"
     >
-      <v-text-field
-          :value="name"
-          style="text-align: center"
-          readonly
-          flat
-          dense
-          solo
-          hide-details
-      >
-      </v-text-field>
-    </v-form>
+      {{name}}
+    </span>
     <v-avatar
         class="profile"
         :class="$vuetify.breakpoint.xs ? 'center-image-2' : 'center-image'"
@@ -44,10 +35,12 @@ export default {
 <style scoped>
 .center-input {
   position: absolute;
-  top: 66%;
+  top: 66.5%;
   left: 74%;
   transform: translate(-50%, -50%);
   width: 240px;
+  text-align: center;
+  font-family: Monserrat;
 }
 .center-input-2 {
   position: absolute;
@@ -55,9 +48,8 @@ export default {
   left: 71%;
   transform: translate(-50%, -50%);
   width: 150px;
-}
-.center-input >>> input {
   text-align: center;
+  font-family: Monserrat;
 }
 .center-image {
   position: absolute;

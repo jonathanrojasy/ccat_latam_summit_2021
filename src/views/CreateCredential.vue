@@ -92,6 +92,16 @@
   </v-container>
 </template>
 
+<style scoped>
+.total{
+  opacity: 0;
+  position: absolute;
+}
+.contenedor{
+  position: sticky;
+}
+</style>
+
 <script>
 import ShowImage from "@/components/ShowImage";
 import ShowImage_LinkedIn from "../components/ShowImage_LinkedIn";
@@ -122,14 +132,14 @@ export default {
         scrollX: -window.scrollX,
         scrollY: -window.scrollY,
         windowWidth: document.documentElement.offsetWidth,
-        windowHeight: document.documentElement.offsetHeight
+        windowHeight: document.documentElement.offsetHeight,
       }
       html2canvas(elem,opts).then(canvas => {
         const link = document.createElement("a");
-        link.setAttribute("download", "ccat_latam_summit_historias.jpg");
+        link.setAttribute("download", "ccat_latam_summit_historias.png");
         link.setAttribute(
             "href",
-            canvas.toDataURL("image/jpg").replace("image/jpg", "image/octet-stream")
+            canvas.toDataURL("image/png").replace("image/png", "image/octet-stream")
         );
         link.click();
       });
