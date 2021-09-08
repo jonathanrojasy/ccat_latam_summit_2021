@@ -124,7 +124,7 @@ export default {
     nameRules: [
       v => !!v || 'Ingrese su nombre por favor.',
       v => (v && (v.length >= 2)) || 'Su nombre debe contener por lo menos 2 caracteres.',
-      v => (v && (v.length <= 28)) || 'Su nombre debe contener a lo más 30 caracteres.',
+      v => (v && (v.length <= 29)) || 'Su nombre debe contener a lo más 30 caracteres.',
     ],
   }),
 
