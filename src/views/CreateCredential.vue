@@ -74,7 +74,7 @@ export default {
       }
       html2canvas(elem,opts).then(canvas => {
         const link = document.createElement("a");
-        link.setAttribute("download", "ccat_latam_summit_historias.png");
+        link.setAttribute("download", "culture-spring-ccat_credencial.png");
         link.setAttribute(
             "href",
             canvas.toDataURL("image/png").replace("image/png", "image/octet-stream")
