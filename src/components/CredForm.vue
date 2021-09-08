@@ -13,7 +13,7 @@
         <v-col :cols="$vuetify.breakpoint.xs ? 12 : 12">
 
           <v-row align="center" justify="center" no-gutters>
-            <sheetSpacer :height="$vuetify.breakpoint.xs ? 150 : 112"/>
+            <sheetSpacer :height="$vuetify.breakpoint.xs ? 150 : 113"/>
           </v-row>
 
           <v-row align="center" justify="center" no-gutters>
@@ -36,7 +36,7 @@
                     <v-row align="center" class="center-avatar">
                       <v-avatar
                           class="profile"
-                          size="108"
+                          size="107"
                       >
                         <v-img :src="url"></v-img>
                       </v-avatar>
@@ -101,8 +101,7 @@
 }
 .center-avatar {
   position: relative;
-  top: 81%;
-  left: 21%;
+  left: 21.9%;
 }
 </style>
 

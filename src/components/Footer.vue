@@ -11,36 +11,40 @@
       <v-card-text
           class="text-center pa-0"
       >
-        <v-card
-            class="d-flex justify-space-around"
-            flat
-            tile
-            :height="$vuetify.breakpoint.xs ? 60 : 120"
-            color="#FFFFFC"
-        >
-          <v-card
-              v-for="item in sponsors"
-              :key="item.id"
-              class="align-self-center"
-              flat
-              tile
-              width="250"
-              color="transparent"
-          >
-            <v-btn
-                :href="item.link"
-                target="_blank"
-                color="transparent"
-                text
+        <v-row align="center">
+          <v-col>
+            <v-card
+                class="d-flex justify-space-around"
+                flat
+                tile
+                :height="$vuetify.breakpoint.xs ? 60 : 120"
+                color="#FFFFFC"
             >
-              <v-img
-                  class="pa-0"
-                  :src="item.path()"
-                  :max-width="$vuetify.breakpoint.xs ? (item.width/2) : item.width"
-              ></v-img>
-            </v-btn>
-          </v-card>
-        </v-card>
+              <v-card
+                  v-for="item in sponsors"
+                  :key="item.id"
+                  class="align-self-center"
+                  flat
+                  tile
+                  width="250"
+                  color="transparent"
+              >
+                <v-btn
+                    :href="item.link"
+                    target="_blank"
+                    color="transparent"
+                    text
+                >
+                  <v-img
+                      class="pa-0"
+                      :src="item.path()"
+                      :max-width="$vuetify.breakpoint.xs ? (item.width/2) : item.width"
+                  ></v-img>
+                </v-btn>
+              </v-card>
+            </v-card>
+          </v-col>
+        </v-row>
       </v-card-text>
       <v-card-text
           class="text-center"
@@ -81,7 +85,10 @@ export default {
       {id: "s2", name: 'CCAT', width: 110,
         path: () => {return require('@/assets/sponsors/logo_ccat_azul.png');},
         link: 'https://www.facebook.com/ccat.pe'},
-      {id: "s3", name: 'Revista Competitividad', width: 200,
+      {id: "s3", name: 'Dirección de Cultura y Desarrollo Humano', width: 110,
+        path: () => {return require('@/assets/sponsors/cdh.jpg');},
+        link: 'https://www.facebook.com/DireccionDeCulturaCCAT'},
+      {id: "s4", name: 'Revista Competitividad', width: 200,
         path: () => {return require('@/assets/sponsors/rv.png');},
         link: 'https://revistacompetitividad.com'},
     ],
