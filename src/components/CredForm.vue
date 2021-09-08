@@ -13,7 +13,7 @@
         <v-col :cols="$vuetify.breakpoint.xs ? 12 : 12">
 
           <v-row align="center" justify="center" no-gutters>
-            <sheetSpacer :height="112"/>
+            <sheetSpacer :height="$vuetify.breakpoint.xs ? 150 : 112"/>
           </v-row>
 
           <v-row align="center" justify="center" no-gutters>
@@ -48,7 +48,7 @@
           </v-row>
 
           <v-row align="center" justify="center" no-gutters>
-            <v-col :cols="$vuetify.breakpoint.xs ? 8 : 10">
+            <v-col :cols="$vuetify.breakpoint.xs ? 10 : 10">
               <v-text-field
                   v-model="name"
                   :counter="28"
@@ -67,7 +67,7 @@
           </v-row>
 
           <v-row align="center" justify="center" no-gutters>
-            <sheetSpacer :height="50"/>
+            <sheetSpacer :height="$vuetify.breakpoint.xs ? 60 : 50"/>
           </v-row>
 
           <v-row align="center" justify="center" no-gutters>
@@ -97,7 +97,7 @@
 
 <style scoped>
 .centered-input >>> input {
-  text-align: center
+  text-align: center;
 }
 .center-avatar {
   position: relative;
