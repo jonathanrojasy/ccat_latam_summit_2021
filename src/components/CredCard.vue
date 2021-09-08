@@ -8,14 +8,14 @@
         <v-row align="center" justify="center">
           <v-card
               rounded
-              height="600"
-              width="450"
-              :class="$vuetify.breakpoint.xs ? 'pa-3' : 'pa-6'"
+              max-height="700"
+              max-width="420"
+              :class="$vuetify.breakpoint.xs ? 'px-3' : 'px-3'"
           >
             <v-sheet
                 style="border-radius: 15px;"
                 class="cred-form"
-                height="550"
+                height="650"
             >
               <v-col cols="12" class="fill-height">
                 <v-row>
@@ -52,7 +52,7 @@ export default {
 <style scoped>
 .cred-form{
   background-image: url("../assets/credencial_base.png");
-  background-size: cover;
+  background-size: contain;
   background-position: center;
 }
 </style>

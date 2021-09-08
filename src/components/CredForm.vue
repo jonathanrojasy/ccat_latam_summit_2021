@@ -65,7 +65,7 @@
             <v-col :cols="$vuetify.breakpoint.xs ? 8 : 10">
               <v-btn
                   :disabled="!valid"
-                  color="teal darken-4"
+                  color="#D85551"
                   @click="validate"
                   depressed
                   rounded
