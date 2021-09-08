@@ -11,40 +11,37 @@
       <v-card-text
           class="text-center pa-0"
       >
-        <v-row align="center">
-          <v-col>
-            <v-card
-                class="d-flex justify-space-around"
-                flat
-                tile
-                :height="$vuetify.breakpoint.xs ? 60 : 120"
-                color="#FFFFFC"
+        <v-card
+            class="d-flex flex-wrap justify-space-around"
+            flat
+            tile
+            :height="$vuetify.breakpoint.width < 1000 ? ($vuetify.breakpoint.width < 500 ? 400 : 240) : 120"
+            color="#FFFFFC"
+        >
+          <v-card
+              v-for="item in sponsors"
+              :key="item.id"
+              class="align-self-center"
+              flat
+              tile
+              width="250"
+              color="transparent"
+              :class="$vuetify.breakpoint.xs ? 'pa-8' : 'pa-0'"
+          >
+            <v-btn
+                :href="item.link"
+                target="_blank"
+                color="transparent"
+                text
             >
-              <v-card
-                  v-for="item in sponsors"
-                  :key="item.id"
-                  class="align-self-center"
-                  flat
-                  tile
-                  width="250"
-                  color="transparent"
-              >
-                <v-btn
-                    :href="item.link"
-                    target="_blank"
-                    color="transparent"
-                    text
-                >
-                  <v-img
-                      class="pa-0"
-                      :src="item.path()"
-                      :max-width="$vuetify.breakpoint.xs ? (item.width/2) : item.width"
-                  ></v-img>
-                </v-btn>
-              </v-card>
-            </v-card>
-          </v-col>
-        </v-row>
+              <v-img
+                  class="pa-0"
+                  :src="item.path()"
+                  :max-width="$vuetify.breakpoint.xs ? (3*item.width/4) : item.width"
+              ></v-img>
+            </v-btn>
+          </v-card>
+        </v-card>
       </v-card-text>
       <v-card-text
           class="text-center"
