@@ -22,7 +22,7 @@
               <v-row justify="center" class="py-2">
                 <v-btn
                     x-large
-                    color="teal darken-4"
+                    color="#D85551"
                     class="subtitle-1 font-weight-bold white--text"
                     block
                     @click="captureDivHistorias()"
@@ -34,7 +34,7 @@
                     x-large
                     block
                     outlined
-                    color="teal darken-4"
+                    color="#BFD8EB"
                     class="subtitle-1 font-weight-bold"
                 >VOLVER</v-btn>
               </v-row>

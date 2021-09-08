@@ -1,6 +1,6 @@
 <template>
   <v-sheet
-      class="py-12"
+      :class="$vuetify.breakpoint.xs ? 'py-6' : 'py-12'"
       color="transparent"
   >
     <v-form
@@ -10,9 +10,14 @@
     >
       <v-container fluid fill-height>
         <v-col :cols="$vuetify.breakpoint.xs ? 0 : 1"></v-col>
-        <v-col :cols="$vuetify.breakpoint.xs ? 12 : 10">
+        <v-col :cols="$vuetify.breakpoint.xs ? 12 : 12">
+
           <v-row align="center" justify="center" no-gutters>
-            <v-container fluid fill-height>
+            <sheetSpacer :height="112"/>
+          </v-row>
+
+          <v-row align="center" justify="center" no-gutters>
+            <v-container fluid fill-height class="py-2">
               <v-col :cols="$vuetify.breakpoint.xs ? 1 : 1">
                 <v-file-input
                     accept="image/png, image/jpeg"
@@ -28,10 +33,10 @@
               <v-col :cols="$vuetify.breakpoint.xs ? 10 : 10">
                 <v-row align="center" justify="center">
                   <v-col>
-                    <v-row align="center" justify="center">
+                    <v-row align="center" class="center-avatar">
                       <v-avatar
-                          class="profile center-avatar"
-                          size="106"
+                          class="profile"
+                          size="108"
                       >
                         <v-img :src="url"></v-img>
                       </v-avatar>
@@ -42,7 +47,7 @@
             </v-container>
           </v-row>
 
-          <v-row align="center" justify="center" class="pt-4" no-gutters>
+          <v-row align="center" justify="center" no-gutters>
             <v-col :cols="$vuetify.breakpoint.xs ? 8 : 10">
               <v-text-field
                   v-model="name"
@@ -61,21 +66,26 @@
             </v-col>
           </v-row>
 
-          <v-row align="center" justify="center" class="pt-4" no-gutters>
-            <v-col :cols="$vuetify.breakpoint.xs ? 8 : 10">
-              <v-btn
-                  :disabled="!valid"
-                  color="#D85551"
-                  @click="validate"
-                  depressed
-                  rounded
-                  block
-              >
+          <v-row align="center" justify="center" no-gutters>
+            <sheetSpacer :height="50"/>
+          </v-row>
+
+          <v-row align="center" justify="center" no-gutters>
+            <v-col :cols="$vuetify.breakpoint.xs ? 8 : 12">
+              <v-container fluid fill-height style="justify-content: center;padding: 0">
+                <v-btn
+                    :disabled="!valid"
+                    color="#D85551"
+                    @click="validate"
+                    depressed
+                    rounded
+                >
                 <span
                     class="white--text"
-                    :class="$vuetify.breakpoint.xs ? 'text-caption font-weight-light' : 'text-subtitle-1 font-weight-bold'"
-                >Generar mi credencial</span>
-              </v-btn>
+                    :class="$vuetify.breakpoint.xs ? 'text-caption font-weight-light' : 'text-subtitle-2'"
+                >Generar credencial</span>
+                </v-btn>
+              </v-container>
             </v-col>
           </v-row>
         </v-col>
@@ -90,15 +100,19 @@
   text-align: center
 }
 .center-avatar {
-  position: static;
-  top: 66%;
-  left: 50%;
+  position: relative;
+  top: 81%;
+  left: 21%;
 }
 </style>
 
 <script>
+import sheetSpacer from "./sheetSpacer";
 export default {
   name: "CredForm",
+  components:{
+    sheetSpacer
+  },
   data: () => ({
     valid: true,
     url: null,

@@ -2,7 +2,7 @@
   <v-card
       color="transparent"
       flat
-      :height="$vuetify.breakpoint.xs ? '140px' : '140px'"
+      :height="$vuetify.breakpoint.xs ? '130px' : '150px'"
       tile
   >
   </v-card>

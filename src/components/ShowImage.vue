@@ -31,7 +31,7 @@ export default {
 <style scoped>
 .center-input {
   position: absolute;
-  top: 65.5%;
+  top: 69%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -40,7 +40,7 @@ export default {
 
 .center-image {
   position: absolute;
-  top: 52.2%;
+  top: 55.6%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

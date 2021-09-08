@@ -8,23 +8,18 @@
         <v-row align="center" justify="center">
           <v-card
               rounded
-              max-height="700"
-              max-width="420"
-              :class="$vuetify.breakpoint.xs ? 'px-3' : 'px-3'"
+              :height="$vuetify.breakpoint.xs ? 600 : 550"
+              :width="$vuetify.breakpoint.xs ? 350 : 320"
+              :class="$vuetify.breakpoint.xs ? 'px-3 pt-3' : 'px-3'"
           >
             <v-sheet
                 style="border-radius: 15px;"
                 class="cred-form"
-                height="650"
+                :height="$vuetify.breakpoint.xs ? 580 : 550"
+                :width="$vuetify.breakpoint.xs ? 330 : 300"
             >
               <v-col cols="12" class="fill-height">
-                <v-row>
-                  <v-sheet
-                      color="transparent"
-                      :height="$vuetify.breakpoint.xs ? 115 : 138"
-                  >
-                  </v-sheet>
-                </v-row>
+
                 <v-row align="center" justify="center">
                   <v-col cols="12" class="pa-0">
                     <CredForm/>
@@ -47,7 +42,6 @@ export default {
     CredForm,
   }
 }
-//
 </script>
 
 <style scoped>
