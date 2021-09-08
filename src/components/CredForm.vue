@@ -13,7 +13,7 @@
         <v-col :cols="$vuetify.breakpoint.xs ? 12 : 12">
 
           <v-row align="center" justify="center" no-gutters>
-            <sheetSpacer :height="$vuetify.breakpoint.xs ? 150 : 113"/>
+            <sheetSpacer :height="$vuetify.breakpoint.xs ? 151 : 114"/>
           </v-row>
 
           <v-row align="center" justify="center" no-gutters>
@@ -33,10 +33,10 @@
               <v-col :cols="$vuetify.breakpoint.xs ? 10 : 10">
                 <v-row align="center" justify="center">
                   <v-col>
-                    <v-row align="center" class="center-avatar">
+                    <v-row align="center" :class="$vuetify.breakpoint.xs ? 'center-avatar-min' : 'center-avatar-normal'">
                       <v-avatar
                           class="profile"
-                          size="107"
+                          :size="$vuetify.breakpoint.xs ? 114 : 106"
                       >
                         <v-img :src="url"></v-img>
                       </v-avatar>
@@ -99,9 +99,13 @@
 .centered-input >>> input {
   text-align: center;
 }
-.center-avatar {
+.center-avatar-normal {
   position: relative;
-  left: 21.9%;
+  left: 22.2%;
+}
+.center-avatar-min {
+  position: relative;
+  left: 24.9%;
 }
 </style>
 
